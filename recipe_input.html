@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Recipe</title>
+</head>
+<body>
+    <h2>Add Your Recipe</h2>
+    <form action="/recipe_input" method="post">
+        <label>Recipe Name:</label>
+        <input type="text" name="recipe_name" required><br>
+
+        <label>Ingredients:</label>
+        <textarea name="ingredients" required></textarea><br>
+
+        <button type="submit">Add Recipe</button>
+    </form>
+
+    <h3>Your Recipes:</h3>
+    <ul>
+        {% for recipe in recipes %}
+            <li><strong>{{ recipe.name }}</strong>: {{ recipe.ingredients }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/recipe_plan">View Recipe Plan</a>
+</body>
+</html>
